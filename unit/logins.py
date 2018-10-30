@@ -1,31 +1,35 @@
 #-*- coding:utf-8 -*-
 import unittest
-from util import firefoxutil,urlutil
 from  login.control import logincontrol
 class Login(unittest.TestCase):
     @classmethod
     def setUpClass(self):
-        # 实例化类
-        self.fire=firefoxutil.startFireFox2()
-        # 实例化url类
-        self.URL=urlutil.URL()
-        self.contro=logincontrol.loginCon(self.fire)
+        self.con=logincontrol.loginCon()
+
+
         pass
     def setUp(self):
         # 打开京东登录页面
-        self.fire.startFireFox1(self.URL.JD_LONGIN)
+        self.con.openfix()
 
         pass
     def tearDown(self):
         # 关闭页面
-        self.fire.closeFireFox()
+        self.con.closefix()
+
+
         pass
-    @classmethod
-    def tearDownClass(self):
-        pass
+
     def test_up(self):
+        u"""登陆失败"""
+        self.con.Sendkeys(self)
 
-        self.contro.Sendkeys("","",self)
 
+
+        pass
+
+    def test_Ok(self):
+        u"""登陆成功"""
+        self.con.SenkeysOk(self)
 
         pass
