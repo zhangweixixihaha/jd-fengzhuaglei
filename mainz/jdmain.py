@@ -6,7 +6,7 @@ class JMain(object):
     def __init__(self):
         self.url=urlutil.URL()
         self.mainshopping=firefoxutil.startFireFox2()
-
+ 
         pass
 
     def OpenFire(self):
