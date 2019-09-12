@@ -30,7 +30,7 @@ def test_up(self):
     u"""登陆失败"""
     self.con.Sendkeys(self)
 
-    
+
 
     pass
 

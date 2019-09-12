@@ -33,6 +33,7 @@ class startFireFox2(object):
     # 显示休眠
     def WebWait(self,message):
         try:
+
             text=(By.LINK_TEXT,message)
             WebDriverWait(self.driver).until(EC.presence_of_all_elements_located(text))
             return self.driver.find_element_by_link_text(message)
@@ -54,6 +55,7 @@ class startFireFox2(object):
     def FindIDs(self, ID):
         try:
             ids = (By.ID, ID)
+
             WebDriverWait(self.driver).until(EC.presence_of_all_elements_located(ids))
             return self.driver.find_elements_by_id(ID)
         except Exception:
